@@ -2,25 +2,124 @@
 <link rel="import" href="widgets/pa-about.html">
 <link rel="import" href="widgets/pa-combo-chart.html">
 <link rel="import" href="widgets/pa-news.html">
+<link rel="import" href="widgets/devops-widget.html">
 
 <dom-module id="pa-dashboard">
   <template>
     <style include="shared-styles"></style>
+    <style>
+      .pipelineStep {
+        --iron-icon-height: 75px;
+        --iron-icon-width: 75px;
+        padding-right: 25px;
+      }
 
-    <pa-simple-grid sm-cols="1" md-cols$='{{cols}}'>
+      .arrow {
+        --iron-icon-height: 50px;
+        --iron-icon-width: 50px;
+        padding-top: 15px;
+        opacity: 0.30;
+        padding-right: 25px;
+        margin: 0 auto;
+      }
+    </style>
 
-      <pa-widget widget="{{ widgets.comboChart}}"></pa-widget>
+    <pa-simple-grid xs-cols="2">
 
-      <!-- todo: pass component with params to pa-widget if possible -->
       <div>
         <paper-material class="widget" elevation="1">
-          <h3>Todo List</h3>
-          <pa-todo todos="{{todos}}" user="{{user}}"></pa-todo>
+          <h3>What is DevOps?</h3>
+          <div>
+            <p>"DevOps is a culture, movement or practice that emphasizes the collaboration and communication of both software developers and other information-technology (IT) professionals while automating the process of software delivery and infrastructure changes.</p>
+            <p>It aims at establishing a culture and environment where building, testing, and releasing software, can happen rapidly, frequently, and more reliably."</p>
+          </div>
         </paper-material>
       </div>
 
-      <pa-widget widget="{{ widgets.news }}"></pa-widget>
-      <pa-widget widget="{{ widgets.about }}"></pa-widget>
+      <div>
+        <paper-material class="widget" elevation="1">
+          <h3>I want to ....</h3>
+          <div role="listbox">
+            <a class="paper-item-link" href="#inbox" tabindex="-1">
+              <paper-item>Report Issue</paper-item>
+            </a>
+            <a class="paper-item-link" href="#starred" tabindex="-1">
+              <paper-item>Help from Devops</paper-item>
+            </a>
+            <a class="paper-item-link" href="#sent" tabindex="-1">
+              <paper-item>Build Status</paper-item>
+            </a>
+          </div>
+        </paper-material>
+      </div>
+
+      </pa-simple-grid>
+
+    <pa-simple-grid xs-cols="1">
+
+      <div>
+        <paper-material class="widget" elevation="1">
+          <h3>Development Pipeline</h3>
+
+          <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: center;">
+            <div>
+              <iron-icon icon="face" class="pipelineStep"></iron-icon><br/>
+              <p style="text-align: center;">Plan</p>
+            </div>
+            <div>
+              <iron-icon icon="arrow-forward" class="arrow"></iron-icon>
+            </div>
+            <div>
+              <iron-icon icon="code" class="pipelineStep"></iron-icon><br/>
+              <p style="text-align: center;">Code</p>
+            </div>
+            <div >
+              <iron-icon icon="arrow-forward" class="arrow"></iron-icon>
+            </div>
+            <div>
+              <iron-icon icon="build" class="pipelineStep"></iron-icon><br/>
+              <p style="text-align: center;">Build</p>
+            </div>
+            <div >
+              <iron-icon icon="arrow-forward" class="arrow"></iron-icon>
+            </div>
+            <div>
+              <iron-icon icon="check-circle" class="pipelineStep"></iron-icon><br/>
+              <p style="text-align: center;">System Test</p>
+            </div>
+            <div >
+              <iron-icon icon="arrow-forward" class="arrow"></iron-icon>
+            </div>
+            <div>
+              <iron-icon icon="card-giftcard" class="pipelineStep"></iron-icon><br/>
+              <p style="text-align: center;">Package</p>
+            </div>
+            <div >
+              <iron-icon icon="arrow-forward" class="arrow"></iron-icon>
+            </div>
+            <div>
+              <iron-icon icon="cloud-upload" class="pipelineStep"></iron-icon><br/>
+              <p style="text-align: center;">Deploy</p>
+            </div>
+            <div >
+              <iron-icon icon="arrow-forward" class="arrow"></iron-icon>
+            </div>
+            <div>
+              <iron-icon icon="bug-report" class="pipelineStep"></iron-icon><br/>
+              <p style="text-align: center;">Integration Test</p>
+            </div>
+            <div >
+              <iron-icon icon="arrow-forward" class="arrow"></iron-icon>
+            </div>
+            <div>
+              <iron-icon icon="send" class="pipelineStep"></iron-icon><br/>
+              <p style="text-align: center;">Release</p>
+            </div>
+          </div>
+
+        </paper-material>
+      </div>
+
 
     </pa-simple-grid>
 
@@ -34,6 +133,13 @@
         is: 'pa-dashboard',
 
         properties: {
+          tommy: {
+            type: Object,
+            value: {
+              title: 'Tommy',
+              component: 'div'
+            }
+          },
           widgets: {
             type: Array,
             value: {

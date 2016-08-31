@@ -68,56 +68,71 @@
         height: auto;
         max-height: 300px;
       }
+
+      .big {
+        --iron-icon-height: 32px;
+        --iron-icon-width: 32px;
+      }
     </style>
 
     <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
 
       <a data-route="dashboard" href="/" on-click="onDataRouteClick">
-        <iron-icon icon="dashboard"></iron-icon>
-        <span>Dashboard</span>
+        <iron-icon icon="dashboard" class="big"></iron-icon>
+        <span>DevOps Home</span>
       </a>
 
       <a data-route="charts" href="/charts" on-click="onDataRouteClick">
         <iron-icon icon="trending-up"></iron-icon>
-        <span>Charts</span>
+        <span>RoadMap</span>
       </a>
 
-      <a data-route="form-elements" href="/form-elements" on-click="onDataRouteClick">
-        <iron-icon icon="input"></iron-icon>
-        <span>Form Elements</span>
+      <a data-route="charts" href="/charts" on-click="onDataRouteClick">
+        <iron-icon icon="bug-report"></iron-icon>
+        <span>JIRA</span>
       </a>
 
-      <paper-submenu id="ui-elements-menu">
-        <paper-item class="menu-trigger" on-click="toggleSubmenu">
-          <iron-icon icon="hardware:laptop"></iron-icon>
-          <span class="flex">UI Elements</span>
-          <iron-icon icon="hardware:keyboard-arrow-down" class="arow-down"></iron-icon>
-        </paper-item>
-        <paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">
-          <a data-route="typo" href="/typo" on-click="onDataRouteClick">
-            <iron-icon icon="text-format"></iron-icon>
-            <span>Typography</span>
-          </a>
-          <a data-route="buttons" href="/buttons" on-click="onDataRouteClick">
-            <iron-icon icon="arrow-forward"></iron-icon>
-            <span>Buttons</span>
-          </a>
-          <a data-route="ui-other" href="/ui-other" on-click="onDataRouteClick">
-            <iron-icon icon="favorite-border"></iron-icon>
-            <span>Other UI Elements</span>
-          </a>
-        </paper-menu>
-      </paper-submenu>
-
-      <a data-route="maps" href="/maps" on-click="onDataRouteClick">
-        <iron-icon icon="maps:pin-drop"></iron-icon>
-        <span>Maps</span>
+      <a data-route="charts" href="/charts" on-click="onDataRouteClick">
+        <iron-icon icon="build"></iron-icon>
+        <span>Builds</span>
       </a>
 
-      <a data-route="tables" href="/tables" on-click="onDataRouteClick">
-        <iron-icon icon="apps"></iron-icon>
-        <span>Tables</span>
-      </a>
+      <!--<a data-route="form-elements" href="/form-elements" on-click="onDataRouteClick">-->
+        <!--<iron-icon icon="input"></iron-icon>-->
+        <!--<span>Form Elements</span>-->
+      <!--</a>-->
+
+      <!--<paper-submenu id="ui-elements-menu">-->
+        <!--<paper-item class="menu-trigger" on-click="toggleSubmenu">-->
+          <!--<iron-icon icon="hardware:laptop"></iron-icon>-->
+          <!--<span class="flex">UI Elements</span>-->
+          <!--<iron-icon icon="hardware:keyboard-arrow-down" class="arow-down"></iron-icon>-->
+        <!--</paper-item>-->
+        <!--<paper-menu class="menu-content sublist" attr-for-selected="data-route" selected="[[route]]">-->
+          <!--<a data-route="typo" href="/typo" on-click="onDataRouteClick">-->
+            <!--<iron-icon icon="text-format"></iron-icon>-->
+            <!--<span>Typography</span>-->
+          <!--</a>-->
+          <!--<a data-route="buttons" href="/buttons" on-click="onDataRouteClick">-->
+            <!--<iron-icon icon="arrow-forward"></iron-icon>-->
+            <!--<span>Buttons</span>-->
+          <!--</a>-->
+          <!--<a data-route="ui-other" href="/ui-other" on-click="onDataRouteClick">-->
+            <!--<iron-icon icon="favorite-border"></iron-icon>-->
+            <!--<span>Other UI Elements</span>-->
+          <!--</a>-->
+        <!--</paper-menu>-->
+      <!--</paper-submenu>-->
+
+      <!--<a data-route="maps" href="/maps" on-click="onDataRouteClick">-->
+        <!--<iron-icon icon="maps:pin-drop"></iron-icon>-->
+        <!--<span>Maps</span>-->
+      <!--</a>-->
+
+      <!--<a data-route="tables" href="/tables" on-click="onDataRouteClick">-->
+        <!--<iron-icon icon="apps"></iron-icon>-->
+        <!--<span>Tables</span>-->
+      <!--</a>-->
 
       <a data-route="user-profile" href="/user-profile" on-click="onDataRouteClick" hide$="{{!user}}">
         <iron-icon icon="account-box"></iron-icon>
